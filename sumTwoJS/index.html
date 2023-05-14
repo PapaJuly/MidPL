@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUM PHP</title>
+</head>
+<body>  
+<form method="post" action="javascript:handleIt()">  
+Enter First Number:  
+<input type="number" name="number1" /><br><br>  
+Enter Second Number:  
+<input type="number" name="number2" /><br><br>  
+<input  type="submit" name="submit" value="Add">  
+</form>  
+<script>
+    function handleIt() {
+        var number1 = document.getElementsByName("number1")[0].value;
+        var number2 = document.getElementsByName("number2")[0].value;
+        let result = parseFloat(number1) + parseFloat(number2);
+        alert ('The sum of ' + number1 + " and " + number2 + ' is: ' + result);
+
+    }
+</script>

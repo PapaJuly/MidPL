@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primes</title>
+</head>
+<body>
+    
+<form action="javascript:handleIt()">
+    Enter a Number: <input type="number" name="input" ><br><br>
+    <input type="submit" name="submit" value="Update">
+</form>
+<script>
+    function handleIt() {
+        var input = document.getElementsByName("input")[0].value;
+        var value = false;
+            for (let i = 2; i <= parseInt(input) - 1; i++) {
+                let result = parseInt(input) % i;
+                if (result == 0) {
+                   alert ('The Number '+ input + ' is not prime');
+                   value = true;
+                }
+                }
+            if (!value) {  
+                alert ('The Number ' + input + ' is prime');
+            } 
+          /*  else {  
+                alert ('The Number ' + input + ' is prime');
+            }*/
+     
+    }
+</script>
+</body>
+</html>

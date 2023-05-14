@@ -1,0 +1,24 @@
+{
+  "name": "html2pdf",
+  "authors": [
+    "jasp"
+  ],
+  "description": "contains source code for html2pdf script",
+  "main": "index.html",
+  "keywords": [
+    "html",
+    "pdf"
+  ],
+  "license": "MIT",
+  "homepage": "learningjs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html2pdf.js": "^0.10.1"
+  }
+}
