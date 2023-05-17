@@ -19,8 +19,8 @@
 <?php
     if ($_POST){
         echo '<div id="invoice">';
-        echo "<html><body>\n";
-        echo "<p style=\"text-align:center;\"><b>CV</b></p>";
+        echo "<html><body><center><table>\n\n";
+        
         // Open a file
         $file = fopen($_POST['text'], "r");
   
@@ -49,7 +49,7 @@
         // Closing the file
         fclose($file);
   
-        echo "\n</body></html>";
+        echo "\n</table></center></body></html>";
         
 }
 ?>
