@@ -20,7 +20,7 @@
     if ($_POST){
         echo '<div id="invoice">';
         echo "<html><body><center><table>\n\n";
-  
+        echo "<p style=\"text-align:center;\"><b>CV</b></p>";
         // Open a file
         $file = fopen($_POST['text'], "r");
   
@@ -29,7 +29,7 @@
   
             // HTML tag for placing in row format
             //echo "<tr>";
-            echo "<p style=\"text-align:center;\"><b>CV</b></p>";
+            
             foreach ($data as $i=>$item) {
               if ($i == 0){
                 echo "<br>";
