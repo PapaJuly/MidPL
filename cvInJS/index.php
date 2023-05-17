@@ -19,7 +19,7 @@
 <?php
     if ($_POST){
         echo '<div id="invoice">';
-        echo "<html><body><center><table>\n\n";
+        echo "<html><body><left><table>\n\n";
         
         // Open a file
         $file = fopen($_POST['text'], "r");
@@ -33,11 +33,11 @@
             foreach ($data as $i=>$item) {
               if ($i == 0){
                 echo "<br>";
-                echo "<p style=\"text-align:left;\"><b>" . htmlspecialchars($item)
-                    . "</b></p>";
+                echo "<b>" . htmlspecialchars($item)
+                    . "</b>";
               }
               else {
-                echo  "<p style=\"text-align:left;\">&nbsp;&nbsp;&nbsp; -" . htmlspecialchars($item)
+                echo  "<p > &nbsp;&nbsp;&nbsp; -" . htmlspecialchars($item)
                     . "</p>";
               }
               
@@ -49,7 +49,7 @@
         // Closing the file
         fclose($file);
   
-        echo "\n</table></center></body></html>";
+        echo "\n</table></leftr></body></html>";
         
 }
 ?>
