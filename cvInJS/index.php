@@ -9,8 +9,56 @@
     
 </head>
 <body>
+    <form method="post">
+        submit your link to csv file containing your CV:
+        <input type="text" name="text">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <p>Intenta con mi CV: https://docs.google.com/spreadsheets/d/e/2PACX-1vR6i7xUUWBDJyLeBWHhsawWnWgK3ET9YFIzI4a-Sy-Ozy2Ydtaeww2Le7VhHPYd3O5THSAxGTAtyU3n/pub?output=csv</p>
+<?php
+    if ($_POST){
+        echo '<div id="invoice">';
+        echo "<html><body><center><table>\n\n";
+  
+        // Open a file
+        $file = fopen($_POST['text'], "r");
+  
+        // Fetching data from csv file row by row
+        while (($data = fgetcsv($file)) !== false) {
+  
+            // HTML tag for placing in row format
+            //echo "<tr>";
+            echo "<p style=\"text-align:center;\"><b>CV</b></p>";
+            foreach ($data as $i=>$item) {
+              if ($i == 0){
+                echo "<br>";
+                echo "<p style=\"text-align:left;\"><b>" . htmlspecialchars($item)
+                    . "</b></p>";
+              }
+              else {
+                echo  "<p style=\"text-align:left;\">&nbsp;&nbsp;&nbsp; -" . htmlspecialchars($item)
+                    . "</p>";
+              }
+              
+            }
+            //echo "</tr> \n";
+            echo "</div>";
+        }
+  
+        // Closing the file
+        fclose($file);
+  
+        echo "\n</table></center></body></html>";
+        
+}
+?>
+
+   </body>
+
+</html>
    
-        <div id="invoice">
+        <!-- <div id="invoice">
             <h2>Julián A. Soto Pérez</h2>
             <pre> <h5>    Phone: 787-310-4120</h5></pre>
             <pre><h5>    Email: juliansoto1130@gmail.com</h5></pre>
@@ -21,7 +69,7 @@
             <br>
             <h3>Work Experience: </h3>
             <pre><h4>    Event Server: Coop Rincon <h4></pre><pre><h5>     2021-Present</h5></pre>
-            <pre><h4>    Web Developer: Universidad de Puerto Rico, Mayaguez</h4></pre><pre><h5>     2023-present</h5></pre>
+            <pre><h4>    Web Developer: Universidad de Puerto Rico, Mayaguez</h4></pre><pre><h5>     2023-present</h5></pre> -->
 
         </div>
         <br>
